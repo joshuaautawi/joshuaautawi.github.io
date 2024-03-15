@@ -75,7 +75,11 @@ function init() {
         result = prevNum * currNum;
         break;
       case "÷":
-        result = prevNum / currNum;
+        if (prevNum === 0) {
+          result = 0;
+        } else {
+          result = prevNum / currNum;
+        }
         break;
       case "+":
         result = prevNum + currNum;
