@@ -3,11 +3,9 @@ function init() {
   let prevNum = null;
   let isConcat = false;
   let operator = null;
-
   let num = document.querySelector(".wrapper div");
   let btns = document.querySelectorAll(".calc-row button");
   num.innerHTML = currStrNum;
-
   for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function (event) {
       const value = event.target.innerHTML;
@@ -25,7 +23,6 @@ function init() {
       num.innerHTML = currStrNum;
     });
   }
-
   //all this function can be inside init , so it manipulate the variable that in init function
   function handleNumber(value, currStrNum, isConcat) {
     if (currStrNum === "0" || !isConcat) {
@@ -36,7 +33,6 @@ function init() {
     }
     return [currStrNum, isConcat];
   }
-
   function handleOperator(value, currStrNum, prevNum, isConcat, operator) {
     switch (value) {
       case "←":
@@ -66,7 +62,6 @@ function init() {
     }
     return [currStrNum, prevNum, isConcat, operator];
   }
-
   function getFinalResult(currStrNum, operator, prevNum) {
     let result = null;
     const currNum = Number(currStrNum);
