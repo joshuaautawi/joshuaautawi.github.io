@@ -30,16 +30,7 @@ let btns = document.querySelectorAll(".calc-row button");
 
 num.innerHTML = currStrNum;
 for (let i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function (event) {
-    //@ts-ignore
-    const value = event.target.innerHTML;
-    if (!isNaN(value)) {
-      handleNumber(value);
-    } else {
-      handleOperator(value);
-    }
-    num.innerHTML = currStrNum;
-  });
+  btns[i].addEventListener("click", btnCallBack);
 }
 
 /**
