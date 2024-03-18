@@ -1,4 +1,10 @@
+/* option 1  src= "https://codepen.io/designbymiranda/pen/ZxOoGN" */
 :root {
-  --black: #000;
-  --white: #fff;
+  --background-border: #fff;
+  --background: #f8f8f8;
+  --text: #2f2f2f;
+  --orange: #f6c9b3;
+  --blue: #284881; /* this is good for h1 color or navbar text */
+  --gray: #ededed;
+  --font-family: "Roboto Mono";
 }

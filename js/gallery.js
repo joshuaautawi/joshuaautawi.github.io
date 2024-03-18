@@ -1,6 +1,12 @@
 class Gallery {
   galleryImgs = document.querySelectorAll(".gallery-container img");
+  /**
+   * @type {HTMLButtonElement} - The button for going to the next image.
+   */
   prevButton = document.querySelector(".btns button");
+  /**
+   * @type {HTMLButtonElement} - The button for going to the next image.
+   */
   nextButton = document.querySelector(".btns button:last-child");
   imgLength;
   currImageChild = 0;
