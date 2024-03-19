@@ -1,4 +1,11 @@
+/* option 1  src= "https://codepen.io/designbymiranda/pen/ZxOoGN" */
 :root {
-  --black: #000;
-  --white: #fff;
+  --background-border: #fff;
+  --background: #121212;
+  --text: #fff;
+  --orange: #f6c9b3;
+  --purple: #794bc4;
+  --purple: #875ad1;
+  --gray: #424242;
+  --font-family: "Roboto Mono";
 }
