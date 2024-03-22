@@ -3,11 +3,11 @@
 #include <stdio.h>
 bool linearSearch(int[], int, int);
 bool binarySearch(int[], int, int);
+bool binarySearch2(int[], int, int);
 
 double ceil(double x) {
   int intPart = (int)x;
   double fracPart = x - intPart;
-
   if (fracPart > 0) {
     return intPart + 1;
   } else {
@@ -33,22 +33,40 @@ bool linearSearch(int arr[], int size, int value) {
 };
 
 bool binarySearch(int arr[], int size, int value) {
-  int firstIndex = 0;
-  int lastIndex = size - 1;
-  double midleValue = (double)(lastIndex - firstIndex) / 2;
-  int midIndex = ceil(midleValue);
+  int high = size;
+  int low = 0;
   for (int i = 1; i <= size; i *= 2) {
-    if (arr[midIndex] == value) {
+    int mid = low + (high - low) / 2;
+    if (arr[mid] == value) {
       return true;
-    } else if (arr[midIndex] > value) {
-      lastIndex = midIndex;
-      midleValue = (double)(lastIndex - firstIndex) / 2;
-      midIndex -= ceil(midleValue);
+    } else if (arr[mid] > value) {
+      high = mid;
     } else {
-      firstIndex = midIndex;
-      midleValue = (double)(lastIndex - firstIndex) / 2;
-      midIndex += ceil(midleValue);
+      low = mid + 1;
     }
   }
+  return false;
+}
+int halfNumber(int high, int low) {
+  int half = (high - low) / 2;
+  return half == 0 ? 1 : half;
+}
+// do this using while loop
+bool binarySearch2(int arr[], int size, int value) {
+  int low = 0;
+  int high = size;
+  int mid;
+  do {
+    mid = low + (high - low) / 2;
+    if (arr[mid] == value) {
+      return true;
+    } else if (arr[mid] < value) {
+      // if not adding 1 , cannot archive index == last_length - 1
+      low = mid + 1;
+    } else {
+      // if I add mid +1 , Its cannot archive index == 0
+      high = mid;
+    }
+  } while (low < high);
   return false;
 }
